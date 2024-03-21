@@ -20,6 +20,8 @@ await mongoose.connect(process.env.MONGO_URI)
 
 // use routes
 app.use( RecipeRoute)
+
+
 app.listen(port, () => {
     console.log(`App is running on port ${port}`)
 })
