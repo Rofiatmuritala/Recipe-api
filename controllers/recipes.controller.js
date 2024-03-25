@@ -14,7 +14,11 @@ try {
 export const addRecipe = async (req,res,next) => {
 try {
     //    add a recipe to the database
-    const createResult = await RecipeModel.create(req.body);
+   
+    const createResult = await RecipeModel.create({
+        ...req.body,
+        image: req.file.originalname
+    });
     // return response
     res.status(201).json({Data: createResult});
 } catch (error) {
