@@ -17,7 +17,7 @@ try {
    
     const createResult = await RecipeModel.create({
         ...req.body,
-        image: req.file.originalname
+        image: req.file.filename
     });
     // return response
     res.status(201).json({Data: createResult});
